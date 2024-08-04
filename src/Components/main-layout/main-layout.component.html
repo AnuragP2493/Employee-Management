@@ -1,45 +1,48 @@
-<div class="row">
-  <div class="col-md-3">
-    <app-side-nav></app-side-nav>
-  </div>
-  <div class="col-md-9">
-    <h1>Employees list</h1>
-    <div class="container main-container">
-      @for(emp of empList;track emp.name){
-      <div class="col-md-4 emp-card">
-        <div class="card">
-          <div class="card-body">
-            <div class="d-flex space-between">
-              <div class="image-container">
-                <img src="{{ emp.image }}" />
-              </div>
-              <div>
-                <h4 class="card-title">{{ emp.name }}</h4>
-                <p style="color: gray;" class="card-text">{{ emp.designation }}</p>
-              </div>
-              <div>
-                <i (click)="goToDetail(emp.employeeId)" class="bi bi-send"></i>
-              </div>
-            </div>
-            <div class="d-flex align-center">
-              <div>{{ emp.rating }} Rating</div>
-              <ngb-rating [max]="5" [rate]="emp.rating"></ngb-rating>
-            </div>
 
-            <div class="d-flex space-between bod">
-              <div><span style="color: gray;" >Experience:</span>  {{ emp.experience }} Years</div>
-              <div> <span style="color: gray;" >Date of Joining:</span> {{ emp.joiningYear }}</div>
+    <div class="row w-99">
+        <div class="col-md-3">
+          <app-side-nav></app-side-nav>
+        </div>
+        <div class="col-md-9">
+          <h1>Employees list</h1>
+          <div class="container main-container">
+            @for(emp of empList;track emp.name){
+            <div class="col-md-4 emp-card">
+              <div class="card">
+                <div (click)="goToDetail(emp.employeeId)" class="card-body">
+                  <div class="d-flex space-between">
+                    <div class="image-container">
+                      <img src="{{ emp.image }}" />
+                    </div>
+                    <div>
+                      <h4 class="card-title">{{ emp.name }}</h4>
+                      <p style="color: gray;" class="card-text">{{ emp.designation }}</p>
+                    </div>
+                    <div>
+                      <i  class="bi bi-send"></i>
+                    </div>
+                  </div>
+                  <div class="d-flex align-center">
+                    <div>{{ emp.rating }} Rating</div>
+                    <ngb-rating [max]="5" [rate]="emp.rating"></ngb-rating>
+                  </div>
+      
+                  <div class="d-flex space-between bod">
+                    <div><span style="color: gray;" >Experience:</span>  {{ emp.experience }} Years</div>
+                    <div> <span style="color: gray;" >Date of Joining:</span> {{ emp.joiningYear }}</div>
+                  </div>
+                  <div class="bod"><span style="color: gray;" >Current Team :</span>  {{ emp.currentTeam }}</div>
+                  <div class="bod"> <span style="color: gray;" >Reporting Manger :</span>  {{ emp.reportingManager }}</div>
+                  <div class="d-flex space-between my-2">
+                    <div><i class="bi bi-telephone"></i> {{ emp.phoneNumber }}</div>
+                    <div><i class="bi bi-envelope"></i> {{ emp.emailAddress }}</div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="bod"><span style="color: gray;" >Current Team :</span>  {{ emp.currentTeam }}</div>
-            <div class="bod"> <span style="color: gray;" >Reporting Manger :</span>  {{ emp.reportingManager }}</div>
-            <div class="d-flex space-between">
-              <div><i class="bi bi-telephone"></i> {{ emp.phoneNumber }}</div>
-              <div><i class="bi bi-envelope"></i> {{ emp.emailAddress }}</div>
-            </div>
+            }
           </div>
         </div>
-      </div>
-      }
-    </div>
-  </div>
+
 </div>
+

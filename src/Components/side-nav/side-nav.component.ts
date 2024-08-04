@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { EmpDataService } from '../../Services/emp-data.service';
-import { FormBuilder ,ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder ,FormGroup,ReactiveFormsModule } from '@angular/forms';
 
 
 @Component({
@@ -50,7 +50,7 @@ export class SideNavComponent {
   removeEmptyStrings(obj) {
     const result = {};
     for (const [key, value] of Object.entries(obj)) {
-        if (value !== "") {
+        if (value !== "" && value !== null) {
             result[key] = value;
         }
     }
@@ -60,13 +60,17 @@ export class SideNavComponent {
   onSubmit(e){
     e.preventDefault()
     const modified = this.removeEmptyStrings(this.filterForm.value)
-    this.empService.getFilteredEmployees(modified)
+    const allValuesAreNull = Object.values(modified).every(value => value === null);
+    if(!allValuesAreNull){
+      this.empService.getFilteredEmployees(modified)
+    }
   }
 
-  clear(){
-    this.empService.initialize()
+  clear(e){
+    e.preventDefault()
     this.filterForm.reset();
-    this.empService.initialize();
+    this.empService.initialize()
+    
   }
 
   getUniqueDepartments(): number[] | any[] {
