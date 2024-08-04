@@ -66,6 +66,7 @@ export class SideNavComponent {
   clear(){
     this.empService.initialize()
     this.filterForm.reset();
+    this.empService.initialize();
   }
 
   getUniqueDepartments(): number[] | any[] {
