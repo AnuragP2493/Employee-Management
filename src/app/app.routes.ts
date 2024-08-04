@@ -9,14 +9,15 @@ export const routes: Routes = [
     component: EmpDetailComponent,
   },
   {
-    path: '',
-    component: MainLayoutComponent,
-  },
-  {
     path: 'new-emp',
     component: NewEmployeeComponent,
   },
   { path: 'edit-employee/:id', 
     component: NewEmployeeComponent 
+  },
+  {
+    path: '',
+    component: MainLayoutComponent,
+    pathMatch:'full'
   },
 ];
