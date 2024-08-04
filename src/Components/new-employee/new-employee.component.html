@@ -1,0 +1,113 @@
+<div class="container">
+    <h2>{{ isEditMode ? 'Edit Employee' : 'Add New Employee' }}</h2>
+    
+    <form [formGroup]="addEmployeeForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group row">
+        <label for="employeeId" class="col-md-4 col-form-label">Employee ID:</label>
+        <div class="col-md-8">
+          <input id="employeeId" formControlName="employeeId" class="form-control" [readonly]="isEditMode" />
+          <div *ngIf="addEmployeeForm.get('employeeId')?.invalid && addEmployeeForm.get('employeeId')?.touched" class="text-danger">
+            Employee ID is required
+          </div>
+        </div>
+      </div>
+  
+
+      <div class="form-group row my-1">
+        <label for="name" class="col-md-4 col-form-label">Name:</label>
+        <div class="col-md-8">
+          <input id="name" formControlName="name" class="form-control" />
+          <div *ngIf="addEmployeeForm.get('name')?.invalid && addEmployeeForm.get('name')?.touched" class="text-danger">
+            Name is required
+          </div>
+        </div>
+      </div>
+  
+  
+      <div class="form-group row my-1">
+        <label for="designation" class="col-md-4 col-form-label">Designation:</label>
+        <div class="col-md-8">
+          <input id="designation" formControlName="designation" class="form-control" />
+        </div>
+      </div>
+  
+
+      <div class="form-group row my-1">
+        <label for="image" class="col-md-4 col-form-label">Image URL:</label>
+        <div class="col-md-8">
+          <input id="image" formControlName="image" class="form-control" />
+        </div>
+      </div>
+  
+
+      <div class="form-group row my-1">
+        <label for="rating" class="col-md-4 col-form-label">Rating:</label>
+        <div class="col-md-8">
+          <input id="rating" formControlName="rating" type="number" class="form-control" />
+        </div>
+      </div>
+  
+
+      <div class="form-group row my-1">
+        <label for="experience" class="col-md-4 col-form-label">Experience (years):</label>
+        <div class="col-md-8">
+          <input id="experience" formControlName="experience" type="number" class="form-control" />
+        </div>
+      </div>
+  
+
+      <div class="form-group row my-1">
+        <label for="dateOfJoining" class="col-md-4 col-form-label">Date of Joining:</label>
+        <div class="col-md-8">
+          <input id="dateOfJoining" formControlName="dateOfJoining" type="date" class="form-control" />
+        </div>
+      </div>
+  
+
+      <div class="form-group row my-1">
+        <label for="currentTeam" class="col-md-4 col-form-label">Current Team:</label>
+        <div class="col-md-8">
+          <input id="currentTeam" formControlName="currentTeam" class="form-control" />
+        </div>
+      </div>
+  
+
+      <div class="form-group row my-1">
+        <label for="reportingManager" class="col-md-4 col-form-label">Reporting Manager:</label>
+        <div class="col-md-8">
+          <input id="reportingManager" formControlName="reportingManager" class="form-control" />
+        </div>
+      </div>
+  
+
+      <div class="form-group row my-1">
+        <label for="phoneNumber" class="col-md-4 col-form-label">Phone Number:</label>
+        <div class="col-md-8">
+          <input id="phoneNumber" formControlName="phoneNumber" class="form-control" />
+        </div>
+      </div>
+  
+
+      <div class="form-group row my-1">
+        <label for="emailAddress" class="col-md-4 col-form-label">Email Address:</label>
+        <div class="col-md-8">
+          <input id="emailAddress" formControlName="emailAddress" class="form-control" />
+          <div *ngIf="addEmployeeForm.get('emailAddress')?.invalid && addEmployeeForm.get('emailAddress')?.touched" class="text-danger">
+            Invalid email address
+          </div>
+        </div>
+      </div>
+  
+
+      <div class="form-group row">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+          <button type="submit" class="btn btn-primary my-4" [disabled]="addEmployeeForm.invalid">
+            {{ isEditMode ? 'Update Employee' : 'Add Employee' }}
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  

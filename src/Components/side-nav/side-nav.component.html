@@ -1,0 +1,83 @@
+<div class="sidebar">
+    <nav class="nav flex-column p-3">
+      <div class="nav-link link-color" >
+        <i class="bi bi-list-task"></i> Overview
+      </div>
+      <div class="nav-link link-color" >
+        <i class="bi bi-envelope"></i> Messages
+      </div>
+      <div class="nav-link link-color">
+        <i class="bi bi-filter-right"></i> Filter
+      </div>
+      <div class="nav-link link-color"  (click)="toggleSubMenu('submenu1', $event)">
+        <i class="bi bi-search"></i> Search
+      </div>
+      <div class="nav-link link-color">
+        <i class="bi bi-hourglass-bottom"></i> History
+      </div>
+      <div class="nav-link link-color">
+        <i class="bi bi-person-fill"></i> My Account
+      </div>
+
+      <div class="submenu" [ngClass]="{'show': activeSubMenu === 'submenu1'}">
+        <button class="btn btn-light" (click)="toggleSubMenu('submenu1', $event)"><i class="bi bi-x-lg"></i></button>
+        <nav class="nav flex-column">
+          <div class="p-4">
+             <form (ngSubmit)="onSubmit($event)" [formGroup]="filterForm">              
+                <div class="d-flex dir-col">
+                  <label style="color: gray;" for="designation">Designation:</label>
+                  <select id="designation" formControlName="designation">
+                    <option *ngFor="let designation of getUniqueDepartments()" [value]="designation">
+                      {{designation}}
+                    </option>
+                  </select>
+                </div>
+              
+                <div class="d-flex dir-col">
+                  <label style="color: gray;" for="rating">Rating:</label>
+                  <select id="rating" formControlName="rating">
+                    <option *ngFor="let rating of getUniqueRatings()" [value]="rating">
+                      {{rating}}
+                    </option>
+                  </select>
+                </div>
+              
+                <div class="d-flex dir-col">
+                  <label style="color: gray;" for="experience">Experience:</label>
+                  <select id="experience" formControlName="experience">
+                    <option *ngFor="let experience of getUniqueExperiences()" [value]="experience">
+                      {{experience}}
+                    </option>
+                  </select>
+                </div>
+              
+                <div class="d-flex dir-col">
+                  <label style="color: gray;" for="currentTeam">Current Team:</label>
+                  <select id="currentTeam" formControlName="currentTeam">
+                    <option *ngFor="let team of getUniqueTeams()" [value]="team">
+                      {{team}}
+                    </option>
+                  </select>
+                </div>
+              
+                <div  class="d-flex dir-col">
+                  <label style="color: gray;" for="reportingManager">Reporting Manager:</label>
+                  <select id="reportingManager" formControlName="reportingManager">
+                    <option *ngFor="let manager of getUniqueManagers()" [value]="manager">
+                      {{manager}}
+                    </option>
+                  </select>
+                </div>
+                <div  class="d-flex space-between mt-3">
+                    <button class="btn btn-secondary" (click)="clear()">Clear</button>
+                    <button class="btn btn-primary ml-3" type="submit">Submit</button>
+                </div>
+              
+              </form>                           
+          </div>
+        </nav>
+      </div>
+  
+    </nav>
+  </div>
+  

@@ -1,0 +1,147 @@
+const empList = [
+    
+    {
+      "employeeId": "E001",
+      "name": "Alice Johnson",
+      "designation": "Software Engineer",
+      "image" : "https://media.istockphoto.com/id/1974699789/photo/photo-of-pretty-positive-young-woman-in-yellow-apron-isolated-on-yellow-background-stock-photo.webp?s=2048x2048&w=is&k=20&c=4IYW2xWHAKmyMohLw6gz5kEV-ZId2DCcrVzuM8XWKAY=",
+      "rating": 4.5,
+      "experience": 5,
+      "dateOfJoining": "2019-03-15",
+      "currentTeam": "Product Team",
+      "reportingManager": "Bob Smith",
+      "phoneNumber": "+1-555-0101",
+      "emailAddress": "alice@example.com",
+      "joiningYear" : "2019"
+    },
+    {
+      "employeeId": "E002",
+      "name": "David Brown",
+      "designation": "Data Scientist",
+      "image" : "https://media.istockphoto.com/id/1974699789/photo/photo-of-pretty-positive-young-woman-in-yellow-apron-isolated-on-yellow-background-stock-photo.webp?s=2048x2048&w=is&k=20&c=4IYW2xWHAKmyMohLw6gz5kEV-ZId2DCcrVzuM8XWKAY=",
+      "rating": 4.2,
+      "experience": 3,
+      "dateOfJoining": "2021-07-22",
+      "currentTeam": "Product Team",
+      "reportingManager": "Sarah Lee",
+      "phoneNumber": "+1-555-0102",
+      "emailAddress": "david@example.com",
+      "joiningYear" : "2021"
+    },
+    {
+      "employeeId": "E003",
+      "name": "Emma Davis",
+      "designation": "UX Designer",
+      "image" : "https://media.istockphoto.com/id/1974699789/photo/photo-of-pretty-positive-young-woman-in-yellow-apron-isolated-on-yellow-background-stock-photo.webp?s=2048x2048&w=is&k=20&c=4IYW2xWHAKmyMohLw6gz5kEV-ZId2DCcrVzuM8XWKAY=",
+      "rating": 4.7,
+      "experience": 4,
+      "dateOfJoining": "2018-10-05",
+      "currentTeam": "IDC",
+      "reportingManager": "Rachel Green",
+      "phoneNumber": "+1-555-0103",
+      "emailAddress": "emma@example.com",
+      "joiningYear" : "2018"
+    },
+    {
+      "employeeId": "E004",
+      "name": "John Wilson",
+      "designation": "Project Manager",
+      "image" : "https://media.istockphoto.com/id/1974699789/photo/photo-of-pretty-positive-young-woman-in-yellow-apron-isolated-on-yellow-background-stock-photo.webp?s=2048x2048&w=is&k=20&c=4IYW2xWHAKmyMohLw6gz5kEV-ZId2DCcrVzuM8XWKAY=",
+      "rating": 4.0,
+      "experience": 6,
+      "dateOfJoining": "2017-11-13",
+      "currentTeam": "IDC",
+      "reportingManager": "Emily White",
+      "phoneNumber": "+1-555-0104",
+      "emailAddress": "john@example.com",
+      "joiningYear" : "2017"
+    },
+    {
+      "employeeId": "E005",
+      "name": "Sophia Martinez",
+      "designation": "Marketing Specialist",
+      "image" : "https://media.istockphoto.com/id/1974699789/photo/photo-of-pretty-positive-young-woman-in-yellow-apron-isolated-on-yellow-background-stock-photo.webp?s=2048x2048&w=is&k=20&c=4IYW2xWHAKmyMohLw6gz5kEV-ZId2DCcrVzuM8XWKAY=",
+      "rating": 4.3,
+      "experience": 2,
+      "dateOfJoining": "2022-02-19",
+      "currentTeam": "ODBC",
+      "reportingManager": "Michael Brown",
+      "phoneNumber": "+1-555-0105",
+      "emailAddress": "sophia@example.com",
+      "joiningYear" : "2022"
+    },
+    {
+      "employeeId": "E006",
+      "name": "James Taylor",
+      "designation": "Software Engineer",
+      "image" : "https://media.istockphoto.com/id/1974699789/photo/photo-of-pretty-positive-young-woman-in-yellow-apron-isolated-on-yellow-background-stock-photo.webp?s=2048x2048&w=is&k=20&c=4IYW2xWHAKmyMohLw6gz5kEV-ZId2DCcrVzuM8XWKAY=",
+      "rating": 2.6,
+      "experience": 7,
+      "dateOfJoining": "2016-09-09",
+      "currentTeam": "ODBC",
+      "reportingManager": "Karen Robinson",
+      "phoneNumber": "+1-555-0106",
+      "emailAddress": "james@example.com",
+      "joiningYear" : "2016"
+    },
+    {
+      "employeeId": "E007",
+      "name": "Olivia Harris",
+      "designation": "Data Scientist",
+      "image" : "https://media.istockphoto.com/id/1974699789/photo/photo-of-pretty-positive-young-woman-in-yellow-apron-isolated-on-yellow-background-stock-photo.webp?s=2048x2048&w=is&k=20&c=4IYW2xWHAKmyMohLw6gz5kEV-ZId2DCcrVzuM8XWKAY=",
+      "rating": 4.1,
+      "experience": 3,
+      "dateOfJoining": "2020-05-14",
+      "currentTeam": "Radian",
+      "reportingManager": "Tom Clark",
+      "phoneNumber": "+1-555-0107",
+      "emailAddress": "olivia@example.com",
+      "joiningYear" : "2020"
+    },
+    {
+      "employeeId": "E008",
+      "name": "Liam Scott",
+      "designation": "UX Designer",
+      "image" : "https://media.istockphoto.com/id/1974699789/photo/photo-of-pretty-positive-young-woman-in-yellow-apron-isolated-on-yellow-background-stock-photo.webp?s=2048x2048&w=is&k=20&c=4IYW2xWHAKmyMohLw6gz5kEV-ZId2DCcrVzuM8XWKAY=",
+      "rating": 4.4,
+      "experience": 5,
+      "dateOfJoining": "2018-12-01",
+      "currentTeam": "Radian",
+      "reportingManager": "Linda Adams",
+      "phoneNumber": "+1-555-0108",
+      "emailAddress": "liam@example.com",
+      "joiningYear" : "2018"
+    },
+    {
+      "employeeId": "E009",
+      "name": "Ava Anderson",
+      "designation": "Project Manager",
+      "image" : "https://media.istockphoto.com/id/1974699789/photo/photo-of-pretty-positive-young-woman-in-yellow-apron-isolated-on-yellow-background-stock-photo.webp?s=2048x2048&w=is&k=20&c=4IYW2xWHAKmyMohLw6gz5kEV-ZId2DCcrVzuM8XWKAY=",
+      "rating": 4.2,
+      "experience": 4,
+      "dateOfJoining": "2019-06-23",
+      "currentTeam": "Rustify",
+      "reportingManager": "Nancy Clark",
+      "phoneNumber": "+1-555-0109",
+      "emailAddress": "ava@example.com",
+      "joiningYear" : "2019"
+    },
+    {
+      "employeeId": "E010",
+      "name": "Mason Thomas",
+      "designation": "Marketing Specialist",
+      "image" : "https://media.istockphoto.com/id/1974699789/photo/photo-of-pretty-positive-young-woman-in-yellow-apron-isolated-on-yellow-background-stock-photo.webp?s=2048x2048&w=is&k=20&c=4IYW2xWHAKmyMohLw6gz5kEV-ZId2DCcrVzuM8XWKAY=",
+      "rating": 4.3,
+      "experience": 3,
+      "dateOfJoining": "2021-04-17",
+      "currentTeam": "Rustify",
+      "reportingManager": "Steve Martinez",
+      "phoneNumber": "+1-555-0110",
+      "emailAddress": "mason@example.com",
+      "joiningYear" : "2021"
+    }
+  
+  
+]
+
+export default empList
